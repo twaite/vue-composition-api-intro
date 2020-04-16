@@ -1,6 +1,6 @@
 <template>
   <div class="bg">
-    <Slide>
+    <Slide @navigate="$router.push({ name: 'AboutMe' })">
       <div slot="body" class="body">
         <div class="left">
           <div class="flex-grow" />
@@ -37,7 +37,7 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
-import Slide from '@/components/Slide';
+import Slide from '@/components/Slide.vue';
 
 export default defineComponent({
   components: { Slide }

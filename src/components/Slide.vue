@@ -7,8 +7,12 @@
       <slot name="body" />
     </main>
     <footer>
-      <nav @click="$emit('navigate')">
-        <Icon />
+      <nav @click="navigateToPreviousRoute()">
+        <Icon type="backward" />
+      </nav>
+      <div class="flex-grow" />
+      <nav @click="navigateToNextRoute()">
+        <Icon type="forward" />
       </nav>
     </footer>
   </div>
@@ -16,10 +20,46 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
-import Icon from './Icon';
+import Icon from '@/components/Icon.vue';
+import { getNextSlide, getPreviousSlide } from '@/router';
+
+let addedEventListener = false;
 
 export default defineComponent({
-  components: { Icon }
+  components: { Icon },
+  setup(props, vm) {
+    const router = vm.root.$router;
+
+    const navigateToNextRoute = () => {
+      const nextSlide = getNextSlide(router.currentRoute.name || '');
+      router.push({ name: nextSlide });
+    }
+
+    const navigateToPreviousRoute = () => {
+      const nextSlide = getPreviousSlide(router.currentRoute.name || '');
+      router.push({ name: nextSlide });
+    }
+    
+    if (!addedEventListener) {
+      addedEventListener = true;
+
+      window.addEventListener('keydown', (e: KeyboardEvent) => {
+        switch (e.key) {
+          case 'ArrowRight': 
+            navigateToNextRoute();
+            break;
+          case 'ArrowLeft':
+            navigateToPreviousRoute();
+            break;
+        }
+      });
+    }
+
+    return {
+      navigateToNextRoute,
+      navigateToPreviousRoute,
+    }
+  }
 });
 </script>
 
@@ -37,7 +77,7 @@ main {
 }
 
 footer {
-  @apply flex p-3 justify-end;
+  @apply flex p-3;
 }
 
 nav {
