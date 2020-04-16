@@ -1,6 +1,6 @@
 <template>
-  <CodeExample title="Covid Data Example">
-    <CovidDataExample />
+  <CodeExample title="Reusable Code Example">
+    <ReusableExample />
   </CodeExample>
 </template>
 
@@ -8,12 +8,12 @@
 import { defineComponent } from '@vue/composition-api';
 import CodeExample from '@/components/CodeExample.vue';
 import useDocumentTitle from '@/composition-functions/useDocumentTitle';
-import CovidDataExample from '@/examples/CovidDataExample.vue';
+import ReusableExample from '@/examples/ReusableExample.vue';
 
 export default defineComponent({
-  components: { CodeExample, CovidDataExample },
+  components: { CodeExample, ReusableExample },
   setup() {
-    useDocumentTitle('Covid Example');
+    useDocumentTitle('Reusable Code Example');
     return {};
   }
 });

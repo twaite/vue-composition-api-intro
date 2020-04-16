@@ -8,6 +8,8 @@ import Vue3 from '@/slides/Vue3.vue';
 import CompositionAPI from '@/slides/CompositionAPI.vue';
 import Counter from '@/slides/Counter.vue';
 import Covid from '@/slides/Covid.vue';
+import ReusableCode from '@/slides/ReusableCode.vue';
+import Resources from '@/slides/Resources.vue';
 
 Vue.use(VueRouter);
 
@@ -46,6 +48,16 @@ const routes: Array<RouteConfig> = [
     path: "/covid-example",
     name: "Covid",
     component: Covid
+  },
+  {
+    path: "/reusable-example",
+    name: "Reusable",
+    component: ReusableCode
+  },
+  {
+    path: "/resources",
+    name: "Resources",
+    component: Resources
   },
 ];
 
