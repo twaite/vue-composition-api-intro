@@ -3,7 +3,7 @@
     <div slot="title">Why its a Better Pattern</div>
     <div slot="body" class="body">
       <ul class="list-inside list-disc">
-        <li>Provides a better pattern for code resuse (than mixins)</li>
+        <li>Provides a better pattern for code reuse (than mixins)</li>
         <li>Better type inference (aka TypeScript)</li>
         <li>Lets you think about your data flow without thinking about the component API</li>
         <li>No <i>this</i> keyword</li>
