@@ -38,9 +38,14 @@
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api';
 import Slide from '@/components/Slide.vue';
+import useDocumentTitle from '@/composition-functions/useDocumentTitle';
 
 export default defineComponent({
-  components: { Slide }
+  components: { Slide },
+  setup() {
+    useDocumentTitle('Intro');
+    return {};
+  }
 });
 </script>
 

@@ -1,13 +1,12 @@
 <template>
   <Slide>
-    <div slot="title">
-      About Me
-    </div>
+    <div slot="title">Vue 3 & Controversy</div>
     <div slot="body" class="body">
       <ul class="list-inside list-disc">
-        <li>Senior Software Engineer at Dialexa</li>
-        <li>Run the Dallas Vue Meetup</li>
-        <li>Worked in many different frameworks, but Vue is my favorite</li>
+        <li>Vue 3 is currently in <a href="https://github.com/vuejs/vue-next" target="_blank">alpha</a></li>
+        <li><a href="https://github.com/vuejs/rfcs/pull/42" target="_blank">Vue RFC</a></li>
+        <li>Different way of thinking about your code</li>
+        <li>Completely opt in</li>
       </ul>
     </div>
   </Slide>
@@ -21,7 +20,7 @@ import useDocumentTitle from '@/composition-functions/useDocumentTitle';
 export default defineComponent({
   components: { Slide },
   setup() {
-    useDocumentTitle('About Me');
+    useDocumentTitle('Vue 3 and Controversy');
   }
 });
 
@@ -38,5 +37,13 @@ ul {
 
 li {
   @apply pb-4;
+}
+
+a {
+  @apply text-vue-green;
+}
+
+a:hover {
+  @apply underline;
 }
 </style>

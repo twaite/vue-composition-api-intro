@@ -4,6 +4,9 @@ import VueRouter, { RouteConfig } from "vue-router";
 import AboutMe from "@/slides/AboutMe.vue";
 import Agenda from "@/slides/Agenda.vue";
 import Intro from "@/slides/Intro.vue";
+import Vue3 from '@/slides/Vue3.vue';
+import CompositionAPI from '@/slides/CompositionAPI.vue';
+import Counter from '@/slides/Counter.vue';
 
 Vue.use(VueRouter);
 
@@ -23,6 +26,21 @@ const routes: Array<RouteConfig> = [
     name: "Agenda",
     component: Agenda
   },
+  {
+    path: "/vue-3",
+    name: "Vue3",
+    component: Vue3
+  },
+  {
+    path: "/composition-api",
+    name: "CompositionAPI",
+    component: CompositionAPI
+  },
+  {
+    path: "/counter-example",
+    name: "Counter",
+    component: Counter
+  },
 ];
 
 const router = new VueRouter({
@@ -31,20 +49,16 @@ const router = new VueRouter({
   routes
 });
 
-export const slideOrder = [
-  'Intro',
-  'AboutMe',
-  'Agenda',
-];
+const slides = routes.map(r => r.name || '');
 
 export const getNextSlide = (currentSlide: string): string => {
-  const currentIndex = slideOrder.indexOf(currentSlide);
-  return slideOrder[currentIndex + 1];
+  const currentIndex = slides.indexOf(currentSlide);
+  return slides[currentIndex + 1];
 }
 
 export const getPreviousSlide = (currentSlide: string): string => {
-  const currentIndex = slideOrder.indexOf(currentSlide);
-  return slideOrder[currentIndex - 1];
+  const currentIndex = slides.indexOf(currentSlide);
+  return slides[currentIndex - 1];
 }
 
 export default router;

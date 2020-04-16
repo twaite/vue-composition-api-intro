@@ -1,13 +1,12 @@
 <template>
   <Slide>
-    <div slot="title">
-      About Me
-    </div>
+    <div slot="title">Why its a Better Pattern</div>
     <div slot="body" class="body">
       <ul class="list-inside list-disc">
-        <li>Senior Software Engineer at Dialexa</li>
-        <li>Run the Dallas Vue Meetup</li>
-        <li>Worked in many different frameworks, but Vue is my favorite</li>
+        <li>Provides a better pattern for code resuse (than mixins)</li>
+        <li>Better type inference (aka TypeScript)</li>
+        <li>Lets you think about your data flow without thinking about the component API</li>
+        <li>No <i>this</i> keyword</li>
       </ul>
     </div>
   </Slide>
@@ -21,7 +20,7 @@ import useDocumentTitle from '@/composition-functions/useDocumentTitle';
 export default defineComponent({
   components: { Slide },
   setup() {
-    useDocumentTitle('About Me');
+    useDocumentTitle('Composition API');
   }
 });
 
@@ -38,5 +37,9 @@ ul {
 
 li {
   @apply pb-4;
+}
+
+i {
+  @apply bg-gray-900 px-2 rounded;
 }
 </style>
