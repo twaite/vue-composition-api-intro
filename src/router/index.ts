@@ -7,6 +7,7 @@ import Intro from "@/slides/Intro.vue";
 import Vue3 from '@/slides/Vue3.vue';
 import CompositionAPI from '@/slides/CompositionAPI.vue';
 import Counter from '@/slides/Counter.vue';
+import Covid from '@/slides/Covid.vue';
 
 Vue.use(VueRouter);
 
@@ -40,6 +41,11 @@ const routes: Array<RouteConfig> = [
     path: "/counter-example",
     name: "Counter",
     component: Counter
+  },
+  {
+    path: "/covid-example",
+    name: "Covid",
+    component: Covid
   },
 ];
 
