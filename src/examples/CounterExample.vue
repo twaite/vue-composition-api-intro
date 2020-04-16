@@ -11,19 +11,7 @@ import { defineComponent, reactive, computed } from '@vue/composition-api';
 
 export default defineComponent({
   setup() {
-    const state = reactive({
-      count: 0,
-      double: computed(() => state.count * 2)
-    });
-
-    function increment() {
-      state.count++;
-    }
-
-    return {
-      state,
-      increment
-    };
+    return {};
   }
 });
 </script>

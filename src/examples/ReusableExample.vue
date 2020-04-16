@@ -10,17 +10,7 @@ import useDocumentTitle from '../composition-functions/useDocumentTitle';
 
 export default defineComponent({
   setup() {
-    const state = reactive({
-      title: ''
-    });
-
-    watchEffect(() => {
-      useDocumentTitle(state.title);
-    });
-
-    return {
-      state,
-    };
+    return {};
   }
 });
 </script>

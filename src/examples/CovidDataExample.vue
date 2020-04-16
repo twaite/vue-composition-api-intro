@@ -1,6 +1,6 @@
 <template>
   <div class="covid-example">
-    <input placeholder="Filter" v-model="state.filter" />
+    <!-- <input placeholder="Filter" v-model="state.filter" /> -->
     <div class="table-container">
       <table class="table-auto">
         <thead>
@@ -14,7 +14,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="entry in state.filteredData" :key="entry.state">
+          <tr v-for="entry in state.data" :key="entry.state">
             <td>{{entry.state}}</td>
             <td>{{entry.totalTestResults}}</td>
             <td>{{entry.positive}}</td>
@@ -34,19 +34,7 @@ import axios from 'axios';
 
 export default defineComponent({
   setup() {
-    const state = reactive({
-      data: [],
-      filter: '',
-      filteredData: computed(() => state.data.filter(d => d.state.toLowerCase().includes(state.filter.toLowerCase()))),
-    });
-
-    onMounted(async () => {
-      const { data }  = await axios.get('https://covidtracking.com/api/v1/states/current.json');
-      state.data = data;
-    });
-
     return {
-      state,
     };
   }
 });
