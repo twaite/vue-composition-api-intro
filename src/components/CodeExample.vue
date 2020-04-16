@@ -29,6 +29,6 @@ export default defineComponent({
 }
 
 .example-box {
-  @apply w-2/3 bg-white shadow-lg rounded-md p-3 h-full overflow-y-scroll text-base text-black;
+  @apply w-2/3 bg-gray-900 shadow-lg rounded-md p-3 h-full overflow-y-scroll text-gray-200 text-base;
 }
 </style>

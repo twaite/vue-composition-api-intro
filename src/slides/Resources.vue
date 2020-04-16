@@ -5,6 +5,7 @@
       <ul class="list-inside list-disc">
         <li><a href="https://vue-composition-api-rfc.netlify.app" target="_blank">RFC Documentation</a></li>
         <li>Code available <a href="https://github.com/twaite/vue-composition-api-intro" target="_blank">here</a></li>
+        <li><a href="https://github.com/vuejs/composition-api" target="_blank">Vue 2 Plugin</a></li>
       </ul>
     </div>
   </Slide>

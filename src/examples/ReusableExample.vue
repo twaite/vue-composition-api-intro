@@ -27,6 +27,6 @@ export default defineComponent({
 
 <style scoped>
 input {
-  @apply px-3 py-2 border border-solid border-gray-500 rounded w-1/3;
+  @apply px-3 py-2 border border-solid border-gray-500 rounded w-1/3 text-black;
 }
 </style>

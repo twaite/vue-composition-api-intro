@@ -63,7 +63,7 @@ export default defineComponent({
 }
 
 input {
-  @apply w-1/3 border-solid border border-gray-500 rounded py-2 px-3;
+  @apply w-1/3 border-solid border border-gray-500 rounded py-2 px-3 text-black;
 }
 
 th {
