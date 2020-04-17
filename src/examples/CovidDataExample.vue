@@ -10,7 +10,6 @@
             <th>Positive</th>
             <th>Negative</th>
             <th>Hospitalized</th>
-            <th>Deaths</th>
           </tr>
         </thead>
         <tbody>
@@ -20,7 +19,6 @@
             <td>{{entry.positive}}</td>
             <td>{{entry.negative}}</td>
             <td>{{entry.hospitalized || '-'}}</td>
-            <td>{{entry.death || '-'}}</td>
           </tr>
         </tbody>
       </table>
@@ -31,6 +29,8 @@
 <script>
 import { defineComponent, reactive, computed, onMounted } from '@vue/composition-api';
 import axios from 'axios';
+
+// axios.get('https://covidtracking.com/api/v1/states/current.json');
 
 export default defineComponent({
   setup() {
